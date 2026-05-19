@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Sizing</title>
+    <style>
+      div {
+        width: 200px; /* 너비, 가로폭 */
+        height: 100px; /* 높이, 세로폭 */
+        border: 5px solid green;
+        padding: 20px;
+        margin: 20px;
+        background-color: beige;
+        /* 기본값 */
+        /* box-sizing: content-box; */
+      }
+    </style>
+  </head>
+  <body>
+    <p>기본 위아래 여백이 있음</p>
+    <!-- 기본 박스 (content-box) -->
+    <h1>content-box</h1>
+    <div>250 * 150</div>
+    <p>(200 + 20 * 2 + 5 * 2) * (100 + 20 * 2 + 5 * 2)</p>
+    <span>한줄을 다 차지</span>
+    <h1>border-box</h1>
+    <div style="box-sizing: border-box">200 * 100</div>
+    <p>(20 * 2 + 5 * 2 + 150) * (20 * 2 + 5 * 2 + 50)</p>
+  </body>
+</html>

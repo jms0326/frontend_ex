@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 박스 모델 - 블록 vs 인라인 & 숨김 처리</title>
+    <style>
+      body {
+        font-family: "Pretendard", sans-serif;
+        color: #374151;
+      }
+
+      /* 1. 블록 요소: 가로세로 지정 및 상하좌우 여백 완벽 작동 */
+      .block-box {
+        background-color: #fca5a5;
+        width: 150px;
+        height: 50px;
+        margin: 15px;
+        padding: 10px;
+      }
+
+      /* 2. 인라인 요소: 가로세로 크기가 작동 안 하며 상하 여백이 주변 레이아웃을 밀어내지 못함 */
+      .inline-span {
+        background-color: #fef08a;
+        width: 150px;
+        height: 50px;
+        margin: 15px;
+        padding: 10px;
+      }
+
+      /* display-box 기본 공통 스타일 */
+      .display-box {
+        display: inline-block;
+        width: 80px;
+        height: 40px;
+        background-color: #10b981;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+      }
+
+      /* 3. display: none (공간 자체를 완전 파괴) */
+      .d-none {
+        display: none;
+      }
+
+      /* 4. visibility: hidden (투명해질 뿐 물리적인 공간 보존) */
+      .v-hidden {
+        visibility: hidden;
+      }
+
+      /* 5. 시맨틱 블록 태그: div와 물리적으로 동일하게 크기와 마진이 작동하는 Block 요소 */
+      header,
+      nav,
+      main,
+      footer {
+        border: 2px solid #4b5563;
+        margin: 10px 0;
+        padding: 15px;
+        font-weight: bold;
+      }
+
+      header {
+        background-color: #e0f2fe; /* 하늘색 */
+        color: #0369a1;
+      }
+
+      nav {
+        background-color: #fef3c7; /* 연황색 */
+        color: #b45309;
+      }
+
+      main {
+        background-color: #d1fae5; /* 연두색 */
+        color: #047857;
+        min-height: 100px;
+      }
+
+      footer {
+        background-color: #f3f4f6; /* 회색 */
+        color: #4b5563;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2. Block vs Inline 및 display: none vs visibility: hidden 실습</h1>
+    <hr />
+
+    <h2>[실습 1] Block과 Inline의 크기 및 마진 비교</h2>
+    <h3>Block 요소 (div)</h3>
+    <div class="block-box">Block 1</div>
+    <div class="block-box">Block 2</div>
+
+    <h3>Inline 요소 (span)</h3>
+    <span class="inline-span">Inline 1</span>
+    <span class="inline-span">Inline 2</span>
+
+    <hr />
+
+    <h2>[실습 2] 요소를 보이지 않게 숨기는 2대 속성 대조</h2>
+
+    <h3>1) 기본 상태 (박스 3개 정상 노출)</h3>
+    <div class="display-box">박스 1</div>
+    <div class="display-box">박스 2</div>
+    <div class="display-box">박스 3</div>
+
+    <h3>2) display: none 적용 (박스 2번의 물리 공간 소멸)</h3>
+    <div class="display-box">박스 1</div>
+    <div class="display-box d-none">박스 2</div>
+    <div class="display-box">박스 3</div>
+
+    <h3>3) visibility: hidden 적용 (박스 2번은 투명하나 공간 유지)</h3>
+    <div class="display-box">박스 1</div>
+    <div class="display-box v-hidden">박스 2</div>
+    <div class="display-box">박스 3</div>
+
+    <hr />
+
+    <h2>[실습 3] 시맨틱 블록 태그 레이아웃 실습</h2>
+    <p>
+      아래 사용된 header, nav, main, footer 태그는 div와 물리적인 작동
+      방식(Block 요소)이 완전히 동일하지만, 문서의 구조와 구조적 역할의 의미를
+      내포한 시맨틱 태그입니다.
+    </p>
+
+    <header>&lt;header&gt; 영역 (로고 및 사이트 대제목)</header>
+
+    <nav>&lt;nav&gt; 영역 (네비게이션: 홈 | 소개 | 게시판 | 연락처)</nav>
+
+    <main>
+      &lt;main&gt; 본문 핵심 콘텐츠 영역
+      <p style="margin-top: 10px; font-weight: normal; font-size: 0.95rem">
+        시맨틱 블록 태그들은 레이아웃 상에서 일반 div와 똑같이
+        가로/세로(width/height) 크기 설정이 가능하고, 상하좌우 margin, padding
+        등 모든 박스 모델 레이아웃 속성이 사방으로 자유롭게 작동하는
+        <strong>대표적인 Block 요소</strong>입니다.
+      </p>
+    </main>
+
+    <footer>
+      &lt;footer&gt; 영역 (Copyright 2026. All rights reserved. 주소 및 연락처
+      표시)
+    </footer>
+  </body>
+</html>
