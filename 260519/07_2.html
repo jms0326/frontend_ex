@@ -1,0 +1,560 @@
+<!-- Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved. -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정민석의 프리미엄 찬방 - Tailwind CSS Edition</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS v4 Play CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Bootstrap Icons for premium vector accents -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+      body {
+        font-family: 'Noto Sans KR', 'Outfit', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-stone-50 text-stone-900 min-h-screen relative selection:bg-emerald-800 selection:text-white pb-16 md:pb-0">
+
+    <!-- 1. Header / Navbar (Sticky Glassmorphism + Responsive Flex) -->
+    <header class="sticky top-0 z-40 bg-stone-50/80 backdrop-blur-md border-b border-stone-200/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Brand Name (Flex Layout) -->
+        <a href="#" class="flex items-center gap-3">
+          <div class="bg-emerald-800 text-white p-2.5 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-800/10">
+            <i class="bi bi-egg-fried text-xl"></i>
+          </div>
+          <span class="text-xl md:text-2xl font-extrabold text-emerald-900 tracking-tight">정민석의 찬방</span>
+        </a>
+
+        <!-- Desktop Navigation Menu (Hidden on mobile) -->
+        <nav class="hidden md:flex items-center gap-x-8">
+          <a href="#" class="text-sm font-semibold text-emerald-900 hover:text-emerald-700 transition">홈</a>
+          <a href="#menu-grid" class="text-sm font-semibold text-stone-600 hover:text-emerald-800 transition">인기 찬방</a>
+          <a href="#story" class="text-sm font-semibold text-stone-600 hover:text-emerald-800 transition">가문 스토리</a>
+          <a href="#curation" class="text-sm font-semibold text-stone-600 hover:text-emerald-800 transition">정기 구독</a>
+        </nav>
+
+        <!-- Right Buttons (Flex Layout) -->
+        <div class="flex items-center gap-4">
+          <button onclick="toggleCartDrawer()" class="relative p-2.5 text-stone-600 hover:text-emerald-800 transition hover:bg-stone-100 rounded-full" aria-label="장바구니 보기">
+            <i class="bi bi-bag text-xl"></i>
+            <span class="absolute top-0 right-0 w-5 h-5 bg-amber-500 text-stone-950 font-bold text-[10px] rounded-full flex items-center justify-center shadow-sm">3</span>
+          </button>
+          
+          <!-- CTA Action Button (Responsive scale) -->
+          <button onclick="openModal('정민석의 반찬 구독권', '39,900')" class="hidden sm:inline-flex bg-emerald-800 hover:bg-emerald-900 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-emerald-800/20 active:scale-95 transition-all">
+            시작하기
+          </button>
+          
+          <!-- Mobile Menu Button (Hamburger) -->
+          <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 text-stone-600 hover:text-emerald-800 transition rounded-full">
+            <i class="bi bi-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Navigation Menu (Flex Column) -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-stone-200/50 bg-white px-4 py-4 space-y-3 shadow-inner">
+        <a href="#" class="block font-medium text-emerald-900 hover:bg-stone-50 p-2.5 rounded-xl">홈</a>
+        <a href="#menu-grid" class="block font-medium text-stone-600 hover:bg-stone-50 p-2.5 rounded-xl">인기 찬방</a>
+        <a href="#story" class="block font-medium text-stone-600 hover:bg-stone-50 p-2.5 rounded-xl">가문 스토리</a>
+        <a href="#curation" class="block font-medium text-stone-600 hover:bg-stone-50 p-2.5 rounded-xl">정기 구독</a>
+        <button onclick="openModal('정민석의 반찬 구독권', '39,900')" class="w-100 bg-emerald-800 text-white text-center font-bold py-3 rounded-xl block">
+          구독 시작하기
+        </button>
+      </div>
+    </header>
+
+    <!-- 2. Hero Section (Adaptive Typography & Dual Grid Layout) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Hero Content (Text Layout + Flex Buttons) -->
+        <div class="text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center gap-2 bg-emerald-100/60 border border-emerald-200/80 px-4 py-1.5 rounded-full">
+            <span class="flex h-2 w-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span class="text-xs font-semibold text-emerald-800 uppercase tracking-wider">유기농 천연 재료의 정석</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-emerald-950 leading-tight">
+            매일의 밥상을<br>
+            <span class="text-emerald-800">예술로 승화합니다</span>
+          </h1>
+          <p class="text-stone-600 text-base md:text-lg font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
+            화학보존제 제로, 30년 비법 발효 간장과 매일 아침 직송되는 청정 산지 유기농 야채로 정성껏 빚어낸 정민석 가문의 명품 반찬들을 만나보세요.
+          </p>
+          <div class="flex flex-wrap justify-content-center lg:justify-start gap-4">
+            <a href="#menu-grid" class="bg-emerald-800 hover:bg-emerald-900 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-800/15 active:scale-95 transition-all">
+              반찬 구경하기 <i class="bi bi-arrow-right-short text-lg ml-1"></i>
+            </a>
+            <a href="#curation" class="bg-stone-200/80 hover:bg-stone-200 text-stone-800 font-semibold px-8 py-4 rounded-2xl active:scale-95 transition-all">
+              식단 정기 배송
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Media Area (Responsive Image Frame + Position Absolute Accents) -->
+        <div class="relative w-full max-w-md md:max-w-lg mx-auto lg:max-w-none">
+          <div class="absolute -top-6 -left-6 w-24 h-24 bg-amber-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+          <div class="absolute -bottom-10 -right-6 w-32 h-32 bg-emerald-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+          
+          <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-video md:aspect-square lg:aspect-video">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" alt="정갈한 한국식 반찬">
+          </div>
+
+          <!-- Position Floating Widget (Desktop Only) -->
+          <div class="hidden md:flex absolute -bottom-6 -left-6 bg-white/90 backdrop-blur border border-stone-200/50 p-4 rounded-2xl shadow-xl items-center gap-3 animate-bounce">
+            <div class="w-12 h-12 bg-amber-400 rounded-xl flex items-center justify-center text-stone-950 font-bold">
+              <i class="bi bi-trophy-fill text-xl"></i>
+            </div>
+            <div>
+              <p class="text-xs text-stone-500 font-semibold mb-0.5">2026 프리미엄 브랜드</p>
+              <h5 class="text-sm font-bold text-stone-900 mb-0">푸드 부문 대상 수상</h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. Category Filter & Menu Grid (Tailwind Cards + Responsive Columns + Absolute Badge) -->
+    <section id="menu-grid" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-stone-200/40">
+      
+      <!-- Flex Header -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+        <div>
+          <h2 class="text-3xl font-extrabold text-stone-900 tracking-tight">오늘 조리된 명품 찬방</h2>
+          <p class="text-stone-500 text-sm mt-1">오전 10시 당일 조리 완료, 즉시 냉장 포장 출하 상품입니다.</p>
+        </div>
+        
+        <!-- Category Tab Buttons (Scrollable Flex) -->
+        <div class="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto">
+          <button class="bg-emerald-800 text-white font-medium text-sm px-5 py-2.5 rounded-full whitespace-nowrap">전체</button>
+          <button class="bg-white hover:bg-stone-100 text-stone-600 font-medium text-sm px-5 py-2.5 rounded-full border border-stone-200/60 whitespace-nowrap transition">장조림/조림</button>
+          <button class="bg-white hover:bg-stone-100 text-stone-600 font-medium text-sm px-5 py-2.5 rounded-full border border-stone-200/60 whitespace-nowrap transition">나물/무침</button>
+          <button class="bg-white hover:bg-stone-100 text-stone-600 font-medium text-sm px-5 py-2.5 rounded-full border border-stone-200/60 whitespace-nowrap transition">국/찌개</button>
+        </div>
+      </div>
+
+      <!-- Responsive Grid for Product Cards (1 column -> 2 columns -> 3 columns) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="group bg-white rounded-3xl overflow-hidden border border-stone-100 shadow-lg shadow-stone-200/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-900/5 transition-all duration-300 flex flex-col justify-between">
+          <div class="relative overflow-hidden">
+            <!-- Absolute badges -->
+            <span class="absolute top-4 left-4 bg-amber-500 text-stone-950 font-bold text-xs px-3 py-1.5 rounded-full shadow z-10">BEST ⭐</span>
+            <button onclick="toggleLike(this)" class="absolute top-4 right-4 bg-white/95 text-stone-400 p-2.5 rounded-full shadow hover:scale-110 active:scale-95 transition z-10">
+              <i class="bi bi-heart-fill"></i>
+            </button>
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" alt="소갈비찜">
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <span class="text-xs font-bold text-emerald-800">조림/찜</span>
+              <h3 class="text-xl font-bold text-stone-900 mt-1">대궐 궁중 비법 소갈비찜</h3>
+              <p class="text-stone-500 text-sm mt-2 line-clamp-2">숙성 배즙과 매실청으로 부드럽게 재운 갈비에 깊고 진한 특제 간장 베이스가 스며든 명절급 대표 메인 요리.</p>
+            </div>
+            <!-- Flex Footer inside Card -->
+            <div class="flex justify-between items-center pt-4 border-t border-stone-100">
+              <div>
+                <span class="text-xs text-stone-400 line-through">29,000원</span>
+                <p class="text-lg font-extrabold text-emerald-900">26,500원</p>
+              </div>
+              <button onclick="openModal('대궐 궁중 비법 소갈비찜', '26,500')" class="bg-emerald-800 text-white font-medium text-sm px-4.5 py-2.5 rounded-xl hover:bg-emerald-900 active:scale-95 transition-all">
+                담기 <i class="bi bi-cart-plus ml-1.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group bg-white rounded-3xl overflow-hidden border border-stone-100 shadow-lg shadow-stone-200/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-900/5 transition-all duration-300 flex flex-col justify-between">
+          <div class="relative overflow-hidden">
+            <span class="absolute top-4 left-4 bg-rose-500 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow z-10">NEW 🔥</span>
+            <button onclick="toggleLike(this)" class="absolute top-4 right-4 bg-white/95 text-stone-400 p-2.5 rounded-full shadow hover:scale-110 active:scale-95 transition z-10">
+              <i class="bi bi-heart-fill"></i>
+            </button>
+            <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" alt="제육볶음">
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <span class="text-xs font-bold text-emerald-800">무침/볶음</span>
+              <h3 class="text-xl font-bold text-stone-900 mt-1">직화 불향 쭈꾸미 제육볶음</h3>
+              <p class="text-stone-500 text-sm mt-2 line-clamp-2">탱글탱글한 주꾸미와 국산 한돈 삼겹살을 직화로 볶아 매콤한 불향 가득 밥도둑 최강 조합.</p>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-stone-100">
+              <div>
+                <span class="text-xs text-stone-400 line-through">16,000원</span>
+                <p class="text-lg font-extrabold text-emerald-900">13,900원</p>
+              </div>
+              <button onclick="openModal('직화 불향 쭈꾸미 제육볶음', '13,900')" class="bg-emerald-800 text-white font-medium text-sm px-4.5 py-2.5 rounded-xl hover:bg-emerald-900 active:scale-95 transition-all">
+                담기 <i class="bi bi-cart-plus ml-1.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group bg-white rounded-3xl overflow-hidden border border-stone-100 shadow-lg shadow-stone-200/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-900/5 transition-all duration-300 flex flex-col justify-between">
+          <div class="relative overflow-hidden">
+            <span class="absolute top-4 left-4 bg-emerald-700 text-white font-bold text-xs px-3 py-1.5 rounded-full shadow z-10">건강식 🌱</span>
+            <button onclick="toggleLike(this)" class="absolute top-4 right-4 bg-white/95 text-stone-400 p-2.5 rounded-full shadow hover:scale-110 active:scale-95 transition z-10">
+              <i class="bi bi-heart-fill"></i>
+            </button>
+            <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" alt="간장게장">
+          </div>
+          <div class="p-6 space-y-4">
+            <div>
+              <span class="text-xs font-bold text-emerald-800">특선</span>
+              <h3 class="text-xl font-bold text-stone-900 mt-1">저염 비법 연평도 간장게장</h3>
+              <p class="text-stone-500 text-sm mt-2 line-clamp-2">알이 꽉 찬 연평도 암꽃게만을 엄선해 짜지 않고 달짝지근한 감칠맛이 일품인 명품 게장.</p>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-stone-100">
+              <div>
+                <span class="text-xs text-stone-400 line-through">35,000원</span>
+                <p class="text-lg font-extrabold text-emerald-900">31,000원</p>
+              </div>
+              <button onclick="openModal('저염 비법 연평도 간장게장', '31,000')" class="bg-emerald-800 text-white font-medium text-sm px-4.5 py-2.5 rounded-xl hover:bg-emerald-900 active:scale-95 transition-all">
+                담기 <i class="bi bi-cart-plus ml-1.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Interactive Subscription Feature Widget (Flex + Grid + Adaptive Layout) -->
+    <section id="curation" class="bg-emerald-900 text-white py-16 md:py-24 overflow-hidden relative">
+      <div class="absolute -top-12 -left-12 w-64 h-64 bg-emerald-800 rounded-full opacity-35 filter blur-3xl"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 position-relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="text-amber-400 text-sm font-bold uppercase tracking-widest block mb-2">MINSUK'S BOX</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">정기 구독으로 차리는<br>간편하고 완벽한 건강 식단</h2>
+            <p class="text-emerald-100 font-light mt-4 mb-8 leading-relaxed">
+              매주 바뀌는 국/반찬 5종 패키지를 정기 배송 받아보세요. 영양 균형 식단으로 더 이상 오늘 반찬 걱정을 하지 않으셔도 됩니다.
+            </p>
+            
+            <!-- Bullet Items using Flex -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-3.5">
+                <div class="w-6 h-6 bg-emerald-800/80 rounded-full flex items-center justify-center text-amber-400 text-sm"><i class="bi bi-check-lg"></i></div>
+                <span class="text-emerald-500-subtle text-sm">원하는 주기 선택 (매주/격주/매월)</span>
+              </div>
+              <div class="flex items-center gap-3.5">
+                <div class="w-6 h-6 bg-emerald-800/80 rounded-full flex items-center justify-center text-amber-400 text-sm"><i class="bi bi-check-lg"></i></div>
+                <span class="text-emerald-500-subtle text-sm">매 조리 전 산지 직송 친환경 식자재 선별</span>
+              </div>
+              <div class="flex items-center gap-3.5">
+                <div class="w-6 h-6 bg-emerald-800/80 rounded-full flex items-center justify-center text-amber-400 text-sm"><i class="bi bi-check-lg"></i></div>
+                <span class="text-emerald-500-subtle text-sm">배송 전 알림 서비스 및 안전한 비대면 새벽 보냉 박스 배달</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subscription Plan Card Mockup (Tailwind Premium styling) -->
+          <div class="bg-white text-stone-900 rounded-3xl p-8 shadow-2xl relative border-2 border-amber-300">
+            <span class="absolute top-0 right-8 -translate-y-1/2 bg-amber-400 text-stone-950 font-extrabold text-xs px-4 py-2 rounded-full shadow-lg">인기 패키지 🔥</span>
+            
+            <h4 class="text-xl font-bold text-stone-900">패밀리 찬방 올인원 구독팩</h4>
+            <p class="text-stone-400 text-xs mt-1">4인 가족 기준 매주 최고의 밥상 보장</p>
+            
+            <div class="my-6 py-6 border-y border-stone-100 flex justify-between items-baseline">
+              <span class="text-stone-400 text-sm">월 정기 결제액</span>
+              <div>
+                <span class="text-stone-400 text-sm line-through block text-right">159,000원</span>
+                <span class="text-3xl font-extrabold text-emerald-800">129,000원</span>
+                <span class="text-stone-500 text-xs">/ 월</span>
+              </div>
+            </div>
+            
+            <!-- Quick Form Select inside Widget -->
+            <div class="space-y-4 mb-6">
+              <div>
+                <label class="block text-xs font-bold text-stone-500 uppercase mb-2">배송 요일 선택</label>
+                <select class="w-full bg-stone-50 border border-stone-200 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-800">
+                  <option>화요일 오전 (새벽배송)</option>
+                  <option>목요일 오전 (새벽배송)</option>
+                  <option>토요일 오전 (주말식사용)</option>
+                </select>
+              </div>
+            </div>
+            
+            <button onclick="openModal('패밀리 찬방 올인원 구독팩', '129,000')" class="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-4 rounded-xl shadow-lg active:scale-[0.98] transition-all">
+              구독 예약 신청하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Footer Layout (Tailwind Responsive Multi-column Grid) -->
+    <footer class="bg-stone-900 text-stone-400 py-16 border-t border-stone-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="space-y-4 col-span-1 md:col-span-2">
+            <h4 class="text-white text-lg font-bold flex items-center gap-2">
+              <i class="bi bi-egg-fried text-emerald-500 text-xl"></i>
+              <span>정민석의 프리미엄 찬방</span>
+            </h4>
+            <p class="text-sm leading-relaxed max-w-sm">
+              내 가족에게 먹이지 못할 음식은 만들지 않는다는 신념 아래, 엄선된 재료와 숙성 발효 공정으로 프리미엄 테이블 웨어를 선보입니다.
+            </p>
+          </div>
+          <div>
+            <h5 class="text-white text-sm font-bold mb-4">고객 만족</h5>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition">자주 묻는 질문</a></li>
+              <li><a href="#" class="hover:text-white transition">1:1 맞춤 카운슬링</a></li>
+              <li><a href="#" class="hover:text-white transition">새벽 위생 공정 참관</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="text-white text-sm font-bold mb-4">가게 정보</h5>
+            <p class="text-sm">대표이사: 정민석</p>
+            <p class="text-sm mt-1">서울시 강남구 테헤란로 123</p>
+            <p class="text-sm mt-1">고객센터: 1688-0000</p>
+          </div>
+        </div>
+        <hr class="border-stone-800 my-8">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+          <p>&copy; 2026 DINKI'ssTyle. All rights reserved.</p>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-white transition">서비스 약관</a>
+            <a href="#" class="hover:text-white transition font-bold text-emerald-500">개인정보보호정책</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 6. Fixed Mobile Quick Bottom Bar (Position Fixed - Mobile Only) -->
+    <div class="fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-stone-200/80 flex items-center justify-around z-40 md:hidden shadow-lg">
+      <a href="#" class="flex flex-col items-center justify-center text-emerald-800 text-[10px] font-bold">
+        <i class="bi bi-house-door-fill text-lg mb-0.5"></i> 홈
+      </a>
+      <a href="#menu-grid" class="flex flex-col items-center justify-center text-stone-400 text-[10px] hover:text-emerald-800 transition">
+        <i class="bi bi-shop text-lg mb-0.5"></i> 찬방
+      </a>
+      <button onclick="toggleCartDrawer()" class="flex flex-col items-center justify-center text-stone-400 text-[10px] hover:text-emerald-800 transition relative">
+        <i class="bi bi-bag text-lg mb-0.5"></i> 장바구니
+        <span class="absolute -top-1 -right-1 w-4.5 h-4.5 bg-amber-500 text-stone-950 font-extrabold text-[8px] rounded-full flex items-center justify-center">3</span>
+      </button>
+      <button onclick="openModal('정민석의 반찬 구독권', '39,900')" class="flex flex-col items-center justify-center text-stone-400 text-[10px] hover:text-emerald-800 transition">
+        <i class="bi bi-calendar-check text-lg mb-0.5"></i> 구독
+      </button>
+    </div>
+
+    <!-- 7. Interactive Floating Action Button (Fixed Position) -->
+    <button onclick="toggleCartDrawer()" class="hidden md:flex fixed bottom-8 right-8 z-40 bg-emerald-800 text-white p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all hover:bg-emerald-950 items-center justify-center group" aria-label="장바구니 퀵뷰">
+      <i class="bi bi-bag-check-fill text-2xl group-hover:rotate-12 transition"></i>
+    </button>
+
+    <!-- 8. Interactive Widgets (Tailwind styled Modals and Offcanvas panel) -->
+
+    <!-- Shopping Cart Side Drawer (Offcanvas Slide-out Widget) -->
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl border-l border-stone-200/50 translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col justify-between">
+      
+      <!-- Drawer Header -->
+      <div class="p-6 border-b border-stone-100 flex justify-between items-center">
+        <h4 class="text-lg font-bold text-stone-900 flex items-center gap-2">
+          <i class="bi bi-bag-fill text-emerald-800"></i>
+          <span>장바구니</span>
+        </h4>
+        <button onclick="toggleCartDrawer()" class="text-stone-400 hover:text-stone-800 p-2 rounded-full hover:bg-stone-100 transition">
+          <i class="bi bi-x-lg text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Drawer Items (Flex Column List) -->
+      <div class="p-6 space-y-6 overflow-y-auto flex-1">
+        
+        <!-- Cart Item 1 -->
+        <div class="flex gap-4 items-center border-b border-stone-50 pb-4">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=150&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover" alt="소갈비찜">
+          <div class="flex-1">
+            <h5 class="text-sm font-bold text-stone-900">대궐 궁중 비법 소갈비찜</h5>
+            <p class="text-xs text-stone-400 mt-0.5">수량: 1개</p>
+            <p class="text-sm font-bold text-emerald-900 mt-1">26,500원</p>
+          </div>
+          <button class="text-stone-300 hover:text-rose-500 transition"><i class="bi bi-trash3"></i></button>
+        </div>
+
+        <!-- Cart Item 2 -->
+        <div class="flex gap-4 items-center border-b border-stone-50 pb-4">
+          <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=150&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover" alt="제육볶음">
+          <div class="flex-1">
+            <h5 class="text-sm font-bold text-stone-900">직화 불향 쭈꾸미 제육볶음</h5>
+            <p class="text-xs text-stone-400 mt-0.5">수량: 2개</p>
+            <p class="text-sm font-bold text-emerald-900 mt-1">27,800원</p>
+          </div>
+          <button class="text-stone-300 hover:text-rose-500 transition"><i class="bi bi-trash3"></i></button>
+        </div>
+
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="p-6 border-t border-stone-100 bg-stone-50 space-y-4">
+        <div class="flex justify-between items-center text-sm font-semibold">
+          <span class="text-stone-500">배송비 (새벽 직배송)</span>
+          <span class="text-stone-900">무료</span>
+        </div>
+        <div class="flex justify-between items-center text-base font-bold">
+          <span class="text-stone-900">최종 결제 금액</span>
+          <span class="text-xl text-emerald-800">54,300원</span>
+        </div>
+        <button onclick="alert('주문 결제 페이지로 이동합니다.');" class="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-4 rounded-2xl active:scale-[0.98] transition-all shadow-lg">
+          결제하기 <i class="bi bi-credit-card ml-2"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Product Quantity Modal Widget -->
+    <div id="productModal" class="fixed inset-0 flex items-center justify-center bg-black/60 opacity-0 pointer-events-none transition-all duration-300 ease-in-out z-50 p-4">
+      <div class="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300">
+        
+        <div class="p-6 flex justify-between items-center border-b border-stone-100">
+          <h4 class="text-lg font-bold text-stone-900">구매 옵션 선택</h4>
+          <button onclick="closeModal()" class="text-stone-400 hover:text-stone-800 p-1.5 rounded-full hover:bg-stone-100 transition">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <div class="p-6 space-y-6">
+          <div class="bg-stone-50 p-4 rounded-2xl flex items-center gap-4">
+            <div class="bg-emerald-100 text-emerald-800 p-3 rounded-xl"><i class="bi bi-box2-heart-fill text-2xl"></i></div>
+            <div>
+              <p class="text-xs text-stone-400 font-semibold">선택한 메뉴</p>
+              <h5 id="modalProductName" class="text-base font-extrabold text-stone-900 mt-0.5">소갈비찜</h5>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <span class="text-sm font-bold text-stone-500">수량 선택</span>
+            <div class="flex items-center border border-stone-200 rounded-xl overflow-hidden bg-stone-50">
+              <button onclick="changeQty(-1)" class="px-4 py-2 hover:bg-stone-200 text-stone-600 font-bold transition">-</button>
+              <span id="modalProductQty" class="px-6 py-2 text-stone-900 font-extrabold">1</span>
+              <button onclick="changeQty(1)" class="px-4 py-2 hover:bg-stone-200 text-stone-600 font-bold transition">+</button>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center border-t border-stone-100 pt-5">
+            <span class="text-stone-900 font-bold text-base">합계금액</span>
+            <span id="modalTotalPrice" class="text-2xl font-extrabold text-emerald-800">26,500원</span>
+          </div>
+        </div>
+
+        <div class="p-6 bg-stone-50 flex gap-3">
+          <button onclick="closeModal()" class="flex-1 bg-white hover:bg-stone-100 border border-stone-200 text-stone-700 font-bold py-3.5 rounded-2xl transition">
+            취소
+          </button>
+          <button onclick="submitOrder()" class="flex-1 bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-3.5 rounded-2xl transition shadow-lg">
+            장바구니 담기
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Active interactive Toast Alert Widget -->
+    <div id="toastNotification" class="fixed top-6 right-6 z-50 bg-stone-900 text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3 opacity-0 pointer-events-none translate-y-2 transition-all duration-300">
+      <div class="w-7 h-7 bg-emerald-800 rounded-full flex items-center justify-center text-sm text-white">
+        <i class="bi bi-check-circle-fill"></i>
+      </div>
+      <div>
+        <p id="toastText" class="text-sm font-bold text-white mb-0">성공적으로 처리되었습니다!</p>
+      </div>
+    </div>
+
+    <!-- Background dim filter for active side drawer -->
+    <div id="drawerOverlay" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-45"></div>
+
+    <!-- Interactive script triggers -->
+    <script>
+      // Mobile hamburger layout toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+      }
+
+      // Sidebar Cart Drawer toggle
+      function toggleCartDrawer() {
+        const drawer = document.getElementById('cartDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        
+        drawer.classList.toggle('translate-x-full');
+        overlay.classList.toggle('opacity-0');
+        overlay.classList.toggle('pointer-events-none');
+      }
+
+      // Favorite toggle
+      function toggleLike(btn) {
+        btn.classList.toggle('text-stone-400');
+        btn.classList.toggle('text-rose-500');
+        triggerToast('보관함에 정상적으로 추가/삭제되었습니다.');
+      }
+
+      // Interactive dynamic Modal actions
+      const modal = document.getElementById('productModal');
+      let currentPrice = 0;
+      let currentQty = 1;
+
+      function openModal(name, price) {
+        currentPrice = parseInt(price.replace(/,/g, ''));
+        currentQty = 1;
+        
+        document.getElementById('modalProductName').textContent = name;
+        document.getElementById('modalProductQty').textContent = currentQty;
+        updateModalPrice();
+
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.querySelector('.bg-white').classList.remove('scale-95');
+      }
+
+      function closeModal() {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.querySelector('.bg-white').classList.add('scale-95');
+      }
+
+      function changeQty(amt) {
+        if (currentQty + amt >= 1) {
+          currentQty += amt;
+          document.getElementById('modalProductQty').textContent = currentQty;
+          updateModalPrice();
+        }
+      }
+
+      function updateModalPrice() {
+        const total = currentPrice * currentQty;
+        document.getElementById('modalTotalPrice').textContent = total.toLocaleString() + '원';
+      }
+
+      function submitOrder() {
+        closeModal();
+        triggerToast('선택한 메뉴가 장바구니에 완벽하게 추가되었습니다.');
+      }
+
+      // Interactive Custom Toast system
+      function triggerToast(text) {
+        const toast = document.getElementById('toastNotification');
+        document.getElementById('toastText').textContent = text;
+        
+        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+        
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
