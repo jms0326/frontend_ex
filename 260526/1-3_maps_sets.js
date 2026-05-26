@@ -43,10 +43,32 @@ console.log(map.has("aa"));
 console.log(map.has("cc"));
 // key - map 연결시킨다
 console.log(map);
+
+// 바로 get of에 넣을 수 없음. 변환.
+for (const c of Object.entries(o)) {
+  console.log(c);
+}
+
+// delete o[프로퍼티명]
+map.delete("aa"); // 삭제하는 것도 delete로 따로 있다
+console.log(map);
+
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map
+
+// 객체였으면 Object.* 외부 유틸리티를 썼어어야하는...
+console.log(map.entries());
+console.log(map.keys());
+console.log(map.values());
+
 for (const c of map) {
   // 변환과정 등을 거치지 않아도
   // iterable하다
+  console.log(c);
 }
+
+// 객체는 스스로 길이 관련된 게 X
+console.log(Object.values(o).length);
+console.log(map.size);
 
 /*
 // =================================================================
