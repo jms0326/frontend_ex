@@ -14,6 +14,7 @@ const { name: personName2 } = f();
 console.log(personName, personName2);
 
 const { salary, pet = "고양이", name: name2, ...rest } = obj;
+console.log("======================");
 // const { salary } = undefined; null 같이 좀 객체인가 싶은 애들 -> TypeError
 console.log(salary); // 기본객체는 없는 것도 그냥...
 console.log(pet); // 기본값
