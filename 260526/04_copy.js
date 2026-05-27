@@ -5,7 +5,7 @@ const a = { b: { c: 1234 } }; // 구조가 복잡해서 중간에 메모리 주�
 // 재할당
 const b = a; // 값 자체를 넣는게 아니라 메모리 주소
 a["d"] = 5678;
-console.log(a, b);
+// console.log(a, b);
 
 // 얕은 복사
 const c = { ...a }; // e가 추가가 안되었다
