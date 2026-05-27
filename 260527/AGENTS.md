@@ -104,7 +104,25 @@ frontend_ex/
 ├── 260521/            # 2026-05-21 실습
 ├── 260522/            # 2026-05-22 실습
 ├── 260526/            # 2026-05-26 실습
-└── 260527/            # 2026-05-27 실습
+└── 260527/            # 2026-05-27 실습 (Kindred Canine - 바이브 코딩)
+     ├── public/
+     │   ├── index.html           # 메인 페이지
+     │   ├── login/
+     │   │   └── index.html
+     │   ├── signup/
+     │   │   └── index.html
+     │   ├── reservation/
+     │   │   └── index.html
+     │   └── checkup-products/
+     │       └── index.html
+     ├── assets/
+     │   ├── shared.css
+     │   ├── shared.js
+     │   └── images/
+     ├── DESIGN.md
+     ├── SKILL.md
+     ├── README.md
+     └── AGENTS.md
 ```
 
 ---

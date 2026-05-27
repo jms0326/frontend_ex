@@ -1,0 +1,276 @@
+<!-- Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservation | Kindred Canine</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <style>
+    /* Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved. */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fbf9f8;
+      color: #1b1c1c;
+    }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-background": "#1b1c1c",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#e4e2e1",
+            "error-container": "#ffdad6",
+            "surface-bright": "#fbf9f8",
+            "primary": "#005da7",
+            "surface-dim": "#dcd9d9",
+            "primary-fixed-dim": "#a4c9ff",
+            "secondary-fixed-dim": "#ffb955",
+            "outline": "#717783",
+            "outline-variant": "#c1c7d3",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#498300",
+            "on-surface": "#1b1c1c",
+            "on-secondary-fixed": "#291800",
+            "inverse-on-surface": "#f3f0f0",
+            "on-primary-fixed": "#001c39",
+            "error": "#ba1a1a",
+            "surface-container-low": "#f6f3f2",
+            "tertiary": "#386800",
+            "secondary-container": "#feae2c",
+            "tertiary-fixed-dim": "#87dc2c",
+            "surface-container-high": "#eae8e7",
+            "surface": "#fbf9f8",
+            "surface-container": "#f0eded",
+            "on-primary-container": "#fdfcff",
+            "secondary-fixed": "#ffddb4",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#414751",
+            "background": "#fbf9f8",
+            "surface-variant": "#e4e2e1",
+            "on-secondary-fixed-variant": "#633f00",
+            "primary-container": "#2976c7",
+            "inverse-primary": "#a4c9ff",
+            "on-primary-fixed-variant": "#004883",
+            "on-tertiary-container": "#f9ffeb",
+            "tertiary-fixed": "#a1fa49",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#0e2000",
+            "on-secondary-container": "#6b4500",
+            "secondary": "#835500",
+            "on-tertiary-fixed-variant": "#2a5000",
+            "inverse-surface": "#303030",
+            "primary-fixed": "#d4e3ff"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            gutter: "24px",
+            "container-max-width": "1200px",
+            unit: "8px",
+            "margin-desktop": "auto",
+            "margin-mobile": "16px"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "headline-xl-desktop": ["48px", { lineHeight: "56px", fontWeight: "700", letterSpacing: "-0.02em" }],
+            "headline-xl-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pb-24 md:pb-0">
+  <!-- TopAppBar -->
+  <header class="fixed top-0 w-full z-50 shadow-sm bg-surface">
+    <div class="flex items-center px-4 md:px-6 h-16 w-full max-w-[1200px] mx-auto justify-between">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">pets</span>
+        <h1 class="font-headline text-headline-md text-primary tracking-tight">Kindred Canine</h1>
+      </div>
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="font-label font-semibold label-lg text-on-surface-variant hover:opacity-80 transition-opacity" href="../index.html">Home</a>
+        <a class="font-label font-semibold label-lg text-on-surface-variant hover:opacity-80 transition-opacity" href="../checkup-products/index.html">Products</a>
+        <a class="font-label font-semibold label-lg text-primary" href="./index.html">Reservation</a>
+        <a class="font-label font-semibold label-lg text-on-surface-variant hover:opacity-80 transition-opacity" href="../login/index.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-24 px-4 md:px-6 max-w-[1200px] mx-auto w-full">
+    <section class="py-12">
+      <div class="text-center mb-12">
+        <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-4">Schedule a Check-up</h2>
+        <p class="font-body text-body-lg text-on-surface-variant max-w-2xl mx-auto">Choose your preferred package and date. We'll handle the rest to ensure a smooth visit for you and your pet.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Booking Form -->
+        <div class="md:col-span-2 bg-surface-container-lowest rounded-2xl p-6 md:p-8 border border-outline-variant/30 shadow-sm">
+          <h3 class="font-headline text-xl text-on-surface mb-6 flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">edit_calendar</span> Booking Details
+          </h3>
+          <form class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label for="ownerName" class="block font-label font-semibold label-lg text-on-surface mb-1">Owner Name</label>
+                <input id="ownerName" type="text" placeholder="Your full name" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white" />
+              </div>
+              <div>
+                <label for="petName" class="block font-label font-semibold label-lg text-on-surface mb-1">Pet Name</label>
+                <input id="petName" type="text" placeholder="Your dog's name" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white" />
+              </div>
+            </div>
+            <div>
+              <label for="email" class="block font-label font-semibold label-lg text-on-surface mb-1">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white" />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label for="date" class="block font-label font-semibold label-lg text-on-surface mb-1">Preferred Date</label>
+                <input id="date" type="date" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white" />
+              </div>
+              <div>
+                <label for="time" class="block font-label font-semibold label-lg text-on-surface mb-1">Preferred Time</label>
+                <select id="time" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white">
+                  <option>9:00 AM</option>
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>1:00 PM</option>
+                  <option>2:00 PM</option>
+                  <option>3:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="package" class="block font-label font-semibold label-lg text-on-surface mb-1">Select Package</label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <label class="cursor-pointer">
+                  <input type="radio" name="package" class="peer sr-only" />
+                  <div class="p-4 rounded-xl border-2 border-outline-variant peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-center">
+                    <p class="font-label font-semibold label-lg text-on-surface">Basic</p>
+                    <p class="font-headline text-primary font-bold text-lg">$149</p>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="package" class="peer sr-only" checked />
+                  <div class="p-4 rounded-xl border-2 border-outline-variant peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-center relative">
+                    <span class="absolute -top-2 left-1/2 -translate-x-1/2 bg-secondary-container text-on-secondary-container text-xs px-2 py-0.5 rounded-full font-label font-semibold">Popular</span>
+                    <p class="font-label font-semibold label-lg text-on-surface">Comprehensive</p>
+                    <p class="font-headline text-primary font-bold text-lg">$299</p>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="package" class="peer sr-only" />
+                  <div class="p-4 rounded-xl border-2 border-outline-variant peer-checked:border-primary peer-checked:bg-primary/5 transition-all text-center">
+                    <p class="font-label font-semibold label-lg text-on-surface">Senior</p>
+                    <p class="font-headline text-primary font-bold text-lg">$389</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label for="notes" class="block font-label font-semibold label-lg text-on-surface mb-1">Special Requests</label>
+              <textarea id="notes" rows="3" placeholder="Any allergies, behavioral notes, or concerns..." class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full py-4 bg-primary text-on-primary rounded-xl font-label font-semibold label-lg shadow-lg hover:brightness-110 active:scale-95 transition-all">Confirm Reservation</button>
+          </form>
+        </div>
+        <!-- Summary Card -->
+        <div class="md:col-span-1">
+          <div class="bg-primary-container rounded-2xl p-6 text-on-primary-container shadow-lg sticky top-24">
+            <h3 class="font-headline text-xl mb-4">Booking Summary</h3>
+            <div class="space-y-4 mb-6">
+              <div class="flex justify-between">
+                <span class="font-body text-sm opacity-80">Package</span>
+                <span class="font-label font-semibold label-lg">Comprehensive</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-body text-sm opacity-80">Price</span>
+                <span class="font-label font-semibold label-lg">$299.00</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-body text-sm opacity-80">Tax</span>
+                <span class="font-label font-semibold label-lg">$0.00</span>
+              </div>
+              <div class="border-t border-white/20 pt-4 flex justify-between">
+                <span class="font-label font-semibold label-lg">Total</span>
+                <span class="font-headline text-2xl font-bold">$299.00</span>
+              </div>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4 text-sm">
+              <p class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-base mt-0.5">info</span>
+                You will receive a confirmation email with all details after booking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- BottomNavBar (Mobile Only) -->
+  <nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface shadow-[0px_-4px_16px_rgba(74,144,226,0.08)] rounded-t-xl z-50 flex justify-around items-center px-4 py-2 pb-safe">
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="../index.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="font-label text-label-sm">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="../checkup-products/index.html">
+      <span class="material-symbols-outlined">pets</span>
+      <span class="font-label text-label-sm">Products</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1" href="./index.html">
+      <span class="material-symbols-outlined">calendar_today</span>
+      <span class="font-label text-label-sm">Reservation</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="../login/index.html">
+      <span class="material-symbols-outlined">person</span>
+      <span class="font-label text-label-sm">My Page</span>
+    </a>
+  </nav>
+
+  <footer class="bg-surface-container-low py-8 text-center text-on-surface-variant text-label-sm hidden md:block mt-auto">
+    <p>© 2024 Kindred Canine Inc. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved.
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Reservation submitted! We will send a confirmation email shortly.');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!-- Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | Kindred Canine</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <style>
+    /* Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved. */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fbf9f8;
+      color: #1b1c1c;
+    }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-background": "#1b1c1c",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#e4e2e1",
+            "error-container": "#ffdad6",
+            "surface-bright": "#fbf9f8",
+            "primary": "#005da7",
+            "surface-dim": "#dcd9d9",
+            "primary-fixed-dim": "#a4c9ff",
+            "secondary-fixed-dim": "#ffb955",
+            "outline": "#717783",
+            "outline-variant": "#c1c7d3",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#498300",
+            "on-surface": "#1b1c1c",
+            "on-secondary-fixed": "#291800",
+            "inverse-on-surface": "#f3f0f0",
+            "on-primary-fixed": "#001c39",
+            "error": "#ba1a1a",
+            "surface-container-low": "#f6f3f2",
+            "tertiary": "#386800",
+            "secondary-container": "#feae2c",
+            "tertiary-fixed-dim": "#87dc2c",
+            "surface-container-high": "#eae8e7",
+            "surface": "#fbf9f8",
+            "surface-container": "#f0eded",
+            "on-primary-container": "#fdfcff",
+            "secondary-fixed": "#ffddb4",
+            "on-secondary": "#ffffff",
+            "on-surface-variant": "#414751",
+            "background": "#fbf9f8",
+            "surface-variant": "#e4e2e1",
+            "on-secondary-fixed-variant": "#633f00",
+            "primary-container": "#2976c7",
+            "inverse-primary": "#a4c9ff",
+            "on-primary-fixed-variant": "#004883",
+            "on-tertiary-container": "#f9ffeb",
+            "tertiary-fixed": "#a1fa49",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#0e2000",
+            "on-secondary-container": "#6b4500",
+            "secondary": "#835500",
+            "on-tertiary-fixed-variant": "#2a5000",
+            "inverse-surface": "#303030",
+            "primary-fixed": "#d4e3ff"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            gutter: "24px",
+            "container-max-width": "1200px",
+            unit: "8px",
+            "margin-desktop": "auto",
+            "margin-mobile": "16px"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "headline-xl-desktop": ["48px", { lineHeight: "56px", fontWeight: "700", letterSpacing: "-0.02em" }],
+            "headline-xl-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "headline-sm": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+  <!-- TopAppBar -->
+  <header class="fixed top-0 w-full z-50 shadow-sm bg-surface">
+    <div class="flex items-center px-4 md:px-6 h-16 w-full max-w-[1200px] mx-auto justify-between">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">pets</span>
+        <h1 class="font-headline text-headline-md text-primary tracking-tight">Kindred Canine</h1>
+      </div>
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="font-label font-semibold label-lg text-on-surface-variant hover:opacity-80 transition-opacity" href="../index.html">Home</a>
+        <a class="font-label font-semibold label-lg text-on-surface-variant hover:opacity-80 transition-opacity" href="../checkup-products/index.html">Products</a>
+        <a class="font-label font-semibold label-lg text-on-surface-variant hover:opacity-80 transition-opacity" href="../reservation/index.html">Reservation</a>
+        <a class="font-label font-semibold label-lg text-primary" href="../login/index.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center pt-24 px-4 md:px-6 pb-24 md:pb-0">
+    <div class="w-full max-w-[480px] mx-auto bg-surface-container-lowest rounded-2xl shadow-lg p-8 md:p-10 border border-outline-variant/30">
+      <div class="text-center mb-8">
+        <span class="material-symbols-outlined text-primary text-5xl mb-4">add_circle</span>
+        <h2 class="font-headline text-2xl md:text-3xl text-on-surface mb-2">Create Account</h2>
+        <p class="font-body text-body-md text-on-surface-variant">Join the community of caring pet parents</p>
+      </div>
+      <form id="signupForm" class="space-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="firstName" class="block font-label font-semibold label-lg text-on-surface mb-1">First Name</label>
+            <input id="firstName" type="text" placeholder="John" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white" required />
+          </div>
+          <div>
+            <label for="lastName" class="block font-label font-semibold label-lg text-on-surface mb-1">Last Name</label>
+            <input id="lastName" type="text" placeholder="Doe" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white" required />
+          </div>
+        </div>
+        <div>
+          <label for="email" class="block font-label font-semibold label-lg text-on-surface mb-1">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white" required />
+        </div>
+        <div>
+          <label for="password" class="block font-label font-semibold label-lg text-on-surface mb-1">Password</label>
+          <input id="password" type="password" placeholder="Min. 8 characters" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white" required />
+        </div>
+        <div>
+          <label for="confirmPassword" class="block font-label font-semibold label-lg text-on-surface mb-1">Confirm Password</label>
+          <input id="confirmPassword" type="password" placeholder="Repeat password" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body text-body-md bg-white" required />
+        </div>
+        <div class="flex items-start gap-2">
+          <input type="checkbox" id="terms" class="accent-primary w-5 h-5 mt-0.5 rounded border-outline-variant" required />
+          <label for="terms" class="font-body text-sm text-on-surface-variant leading-relaxed">I agree to the <a href="#" class="text-primary font-semibold hover:underline">Terms of Service</a> and <a href="#" class="text-primary font-semibold hover:underline">Privacy Policy</a></label>
+        </div>
+        <button type="submit" class="w-full py-3 bg-primary text-on-primary rounded-xl font-label font-semibold label-lg shadow-lg hover:brightness-110 active:scale-95 transition-all">Create Account</button>
+      </form>
+      <div class="mt-6 text-center">
+        <p class="font-body text-body-md text-on-surface-variant">Already have an account? <a href="../login/index.html" class="text-primary font-semibold hover:underline">Sign in</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- BottomNavBar (Mobile Only) -->
+  <nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface shadow-[0px_-4px_16px_rgba(74,144,226,0.08)] rounded-t-xl z-50 flex justify-around items-center px-4 py-2 pb-safe">
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="../index.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="font-label text-label-sm">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="../checkup-products/index.html">
+      <span class="material-symbols-outlined">pets</span>
+      <span class="font-label text-label-sm">Products</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="../reservation/index.html">
+      <span class="material-symbols-outlined">calendar_today</span>
+      <span class="font-label text-label-sm">Reservation</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1" href="../login/index.html">
+      <span class="material-symbols-outlined">person</span>
+      <span class="font-label text-label-sm">My Page</span>
+    </a>
+  </nav>
+
+  <footer class="bg-surface-container-low py-8 text-center text-on-surface-variant text-label-sm hidden md:block mt-auto">
+    <p>© 2024 Kindred Canine Inc. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved.
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const pw = document.getElementById('password').value;
+      const confirmPw = document.getElementById('confirmPassword').value;
+      if (pw !== confirmPw) {
+        alert('Passwords do not match.');
+        return;
+      }
+      alert('Account created successfully! Welcome to Kindred Canine.');
+    });
+  </script>
+</body>
+</html>
