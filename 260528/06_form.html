@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form id="joinForm">
+      <button>제출</button>
+      <!-- <button type="submit">제출</button> 이게 디폴트 -->
+      <!-- <button type="button">클릭</button> -->
+    </form>
+    <script>
+      const form = document.querySelector("#joinForm");
+      form.addEventListener("submit", (event) => {
+        console.log("제출되었습니다!");
+      });
+    </script>
+  </body>
+</html>
