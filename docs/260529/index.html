@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메모 앱</title>
+    <!-- favicon, og, css framework setting, ga, hostdog -->
+    <style>
+      /* https://noonnu.cc/ */
+      /* https://fonts.google.com/selection/embed */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        /* 100vh 설정 시 스크롤 생기는 이슈 해결 */
+        margin: 0;
+        padding: 0;
+      }
+      /* https://flukeout.github.io/ */
+      /* https://developer.mozilla.org/ko/docs/Web/CSS/Guides/Selectors */
+      /* https://www.w3schools.com/cssref/css_selectors.php */
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* color:  */
+        /* border-color:  */
+        /* https://colorhunt.co/ */
+        /* https://2colors.colorion.co/ */
+        /* background-color: greenyellow; */
+        /* background-color: #ffdfb9; */
+        /* https://unsplash.com/ko */
+        /* https://pixabay.com/ko/ */
+        background-image: url("./img/bg.jpg");
+        background-size: cover;
+        background-position: center;
+        /* TODO : 텍스트랑 버튼이 잘 안보임 -> 대처 */
+        /* opacity -> 투명도. */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>메모 하러 가기</h1>
+      <!-- #container > button, #container button -->
+      <button>이동</button>
+      <!-- #container button -->
+      <!-- <div><button>자손 버튼</button></div> -->
+    </div>
+    <script>
+      // DOM 로딩이 다 끝난 다음이므로 굳이 DOMContentLoaded X
+      document.addEventListener("DOMContentLoaded", main);
+
+      // #을 자꾸 빼먹으므로 # 주의
+      const container = document.querySelector("#container");
+      const button = document.querySelector("#container > button"); // '>' 하위 선택자 (바로 밑)
+      // const button = document.querySelector("#container button"); // 바로 아래가 아니어도 되는 '자손' 선택자
+      // 호이스팅 되므로 함수 선언문을 뒤에다가 잘 써주시면 된다
+      function main() {
+        console.log("DOM 로딩 완료");
+        // 이벤트 타입 누락하거나 혼동하지말 것 (click <-> submit, input <-> change)
+        button.addEventListener("click", () => {
+          // event 생략해도 된다
+          // 1. event.preventDefault -> form
+          // 2. event.target
+          // a href
+          location.href = "memo.html";
+          // 새 창 띄우기는요?
+          // window.open("memo.html")
+        });
+      }
+    </script>
+  </body>
+</html>
