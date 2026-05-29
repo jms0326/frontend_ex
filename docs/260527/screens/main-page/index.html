@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kindred Canine | Expert Dog Health Check-ups</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .organic-shape {
+            border-radius: 60% 40% 70% 30% / 40% 50% 60% 70%;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#1b1c1c",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e4e2e1",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f8",
+                    "primary": "#005da7",
+                    "surface-dim": "#dcd9d9",
+                    "primary-fixed-dim": "#a4c9ff",
+                    "secondary-fixed-dim": "#ffb955",
+                    "outline": "#717783",
+                    "outline-variant": "#c1c7d3",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#498300",
+                    "on-surface": "#1b1c1c",
+                    "on-secondary-fixed": "#291800",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-primary-fixed": "#001c39",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f6f3f2",
+                    "tertiary": "#386800",
+                    "secondary-container": "#feae2c",
+                    "tertiary-fixed-dim": "#87dc2c",
+                    "surface-container-high": "#eae8e7",
+                    "surface": "#fbf9f8",
+                    "surface-container": "#f0eded",
+                    "on-primary-container": "#fdfcff",
+                    "secondary-fixed": "#ffddb4",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#414751",
+                    "background": "#fbf9f8",
+                    "surface-variant": "#e4e2e1",
+                    "on-secondary-fixed-variant": "#633f00",
+                    "primary-container": "#2976c7",
+                    "inverse-primary": "#a4c9ff",
+                    "on-primary-fixed-variant": "#004883",
+                    "on-tertiary-container": "#f9ffeb",
+                    "tertiary-fixed": "#a1fa49",
+                    "surface-tint": "#0060ac",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#0e2000",
+                    "on-secondary-container": "#6b4500",
+                    "secondary": "#835500",
+                    "on-tertiary-fixed-variant": "#2a5000",
+                    "inverse-surface": "#303030",
+                    "primary-fixed": "#d4e3ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max-width": "1200px",
+                    "unit": "8px",
+                    "margin-desktop": "auto",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 shadow-[0px_4px_16px_rgba(74,144,226,0.08)] bg-surface dark:bg-surface-dim">
+<div class="flex items-center px-margin-mobile md:px-gutter h-16 w-full max-w-[1200px] mx-auto justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="pets">pets</span>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Kindred Canine</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-primary transition-opacity hover:opacity-80" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant transition-opacity hover:opacity-80" href="#">Products</a>
+<a class="font-label-md text-label-md text-on-surface-variant transition-opacity hover:opacity-80" href="#">Reservation</a>
+<a class="font-label-md text-label-md text-on-surface-variant transition-opacity hover:opacity-80" href="#">My Page</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-label-md text-label-md active:scale-95 transition-transform">Book Now</button>
+</nav>
+<button class="md:hidden material-symbols-outlined text-primary" data-icon="menu">menu</button>
+</div>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-surface-container-low pt-12 pb-20 md:py-32">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-gutter flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-1/2 z-10 text-center md:text-left">
+<span class="inline-block px-4 py-1.5 mb-6 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+                        Nurturing Life's Best Friend
+                    </span>
+<h2 class="font-headline-xl text-[40px] leading-tight md:text-headline-xl mb-6 text-on-surface">
+                        Because Every Tail Wag <br class="hidden md:block"/>
+<span class="text-primary">Tells a Story of Health</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg mx-auto md:mx-0">
+                        Regular check-ups are the cornerstone of a long, happy life for your canine companion. We provide clinical expertise with a gentle touch.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md shadow-lg active:scale-95 transition-all hover:brightness-110">
+                            Book a Check-up
+                        </button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-xl font-label-md text-label-md active:scale-95 transition-all hover:bg-primary/5">
+                            Our Approach
+                        </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-secondary-container/20 rounded-full blur-2xl"></div>
+<div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-[400px] md:h-[550px] object-cover" data-alt="A heart-warming, high-quality photograph of a golden retriever smiling directly at the camera in a bright, sun-drenched modern living room. The lighting is soft and warm, highlighting the dog's golden fur and friendly eyes. The setting is minimalist with white walls and light wood textures, perfectly matching a clean light-mode aesthetic. The mood is peaceful, healthy, and filled with the joy of a happy pet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXKecnyxVwjM9wsP2CAZKUhtDI-nTVz-ALAxrnu0EH5xk2brw2V3zLy-ew-WDN3VubazwEiihoPQDjwvVj1R2Y1nafnHTBsdRXhYbIHWjeB8K1PsZxI3c2ovDNHHs5C-XNrUb13EGiCC_zHpQdKDbdc85vox0zT069dF3td6FejMu8STp8q_Z8Rx8yAzzzW4-mpPIuF0eebbgP35BMGbT0a1CgKyrKGFviqQBf02_lhve6-bCpAUFmG-qZHEid7KS18WZiFopr_v8"/>
+</div>
+<!-- Floating Stats Card -->
+<div class="absolute bottom-8 -left-4 md:-left-12 glass-card p-6 rounded-2xl shadow-xl z-20 flex items-center gap-4 animate-bounce-slow">
+<div class="w-12 h-12 bg-tertiary-container rounded-full flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface m-0 leading-none">10k+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant m-0">Healthy Paws</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-24 bg-surface">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">The Kindred Care Journey</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                        Simple, stress-free, and thorough. We've designed our check-up process to be as comfortable for your dog as it is informative for you.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-[0px_4px_16px_rgba(74,144,226,0.08)] border border-outline-variant/30 hover:border-primary/40 transition-colors group">
+<div class="w-16 h-16 rounded-xl bg-primary-fixed mb-8 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-primary-fixed text-3xl" data-icon="calendar_month">calendar_month</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">1. Easy Booking</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Choose a time that works for you. Our digital assistant helps you prep with a pre-visit checklist.
+                        </p>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-[0px_4px_16px_rgba(74,144,226,0.08)] border border-outline-variant/30 hover:border-primary/40 transition-colors group">
+<div class="w-16 h-16 rounded-xl bg-secondary-fixed mb-8 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-fixed text-3xl" data-icon="stethoscope">stethoscope</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">2. Gentle Exam</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Our vets perform a nose-to-tail examination, focusing on mobility, dental health, and organ function.
+                        </p>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-[0px_4px_16px_rgba(74,144,226,0.08)] border border-outline-variant/30 hover:border-primary/40 transition-colors group">
+<div class="w-16 h-16 rounded-xl bg-tertiary-fixed mb-8 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-3xl" data-icon="description">description</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">3. Digital Report</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Receive a comprehensive digital health profile with actionable insights and personalized nutrition advice.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-margin-mobile md:px-gutter">
+<div class="max-w-[1000px] mx-auto bg-primary-container rounded-[40px] p-10 md:p-20 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -ml-24 -mb-24"></div>
+<h3 class="font-headline-lg text-headline-lg text-on-primary-container mb-6 relative z-10">
+                    Ready to give your pet <br/> the gift of health?
+                </h3>
+<p class="font-body-lg text-body-lg text-on-primary-container/90 mb-10 max-w-xl mx-auto relative z-10">
+                    Join over 5,000 pet parents who trust Kindred Canine for proactive health management.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-surface-container-lowest text-primary px-10 py-4 rounded-xl font-label-md text-label-md shadow-xl hover:bg-white transition-colors active:scale-95">
+                        Schedule Appointment
+                    </button>
+<button class="bg-primary/20 text-on-primary-container border border-on-primary-container/20 px-10 py-4 rounded-xl font-label-md text-label-md hover:bg-primary/30 transition-colors active:scale-95">
+                        View Pricing
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Style Info -->
+<section class="pb-24 max-w-[1200px] mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[500px]">
+<div class="md:col-span-8 bg-surface-container rounded-3xl p-10 flex flex-col justify-end relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="Close-up professional studio portrait of a healthy Beagle, showcasing clear bright eyes and a shiny coat. The background is a soft, muted blue-grey, emphasizing clinical cleanliness and professional care. High-key lighting creates a soft atmosphere with no harsh shadows, perfectly fitting a sophisticated veterinary brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGuXBPyuUU-7xyTkQTwgYL7BouDei-mi9h1rAp989_am3IBdOLOEN0csmJ41jgY7KwdURuid-vAomTQIYERzMDg65U8mcUG6z4LjBMEqKx4uKUMnbe8zICyYK3BTHrtHVfOe5XM_exMbCTVeMa2yHn9h7fjnU3-jQE0x9Vn6b5Gptn7D5vCera3Ws-mU8BunezBjwpXob5gk0UyERkZET2WrOFZnhG0rzUcdxWpvJyyB8nwcBnKKGkqT56M26GOOH_1fMN34fTgU4"/>
+<div class="relative z-10">
+<h4 class="font-headline-lg text-headline-lg text-on-surface mb-2">Clinical Excellence</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                            Our facility utilizes the latest in non-invasive diagnostic technology to ensure your dog's comfort.
+                        </p>
+</div>
+</div>
+<div class="md:col-span-4 bg-secondary-fixed rounded-3xl p-10 flex flex-col justify-between border-2 border-transparent hover:border-secondary-container transition-all">
+<span class="material-symbols-outlined text-on-secondary-fixed text-4xl" data-icon="verified_user">verified_user</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-secondary-fixed mb-2">Certified Care</h4>
+<p class="font-body-md text-body-md text-on-secondary-fixed-variant">
+                            Every veterinarian is AAHA certified with 10+ years of experience.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface dark:bg-surface-container-lowest shadow-[0px_-4px_16px_rgba(74,144,226,0.08)] rounded-t-xl z-50 flex justify-around items-center px-4 py-2 pb-safe">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="font-label-sm text-label-sm">Products</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">Reservation</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">My Page</span>
+</a>
+</nav>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 md:bottom-12 md:right-12 w-14 h-14 bg-secondary-container text-on-secondary-container rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined text-2xl" data-icon="add">add</span>
+<span class="absolute right-full mr-4 bg-on-surface text-surface text-xs py-1 px-3 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Book Quick Check</span>
+</button>
+<footer class="bg-surface-container-low py-12 hidden md:block">
+<div class="max-w-[1200px] mx-auto px-gutter grid grid-cols-4 gap-8 border-t border-outline-variant/30 pt-12">
+<div class="col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="pets">pets</span>
+<span class="font-headline-md text-headline-md text-primary">Kindred Canine</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Nurturing the bond through proactive pet healthcare and expert clinical guidance.
+                </p>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface mb-6">Services</h5>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary" href="#">Annual Check-ups</a></li>
+<li><a class="hover:text-primary" href="#">Dental Care</a></li>
+<li><a class="hover:text-primary" href="#">Nutritional Planning</a></li>
+<li><a class="hover:text-primary" href="#">Vaccination</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface mb-6">Support</h5>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Emergency Contact</a></li>
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary" href="#">Terms of Use</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface mb-6">Newsletter</h5>
+<div class="flex gap-2">
+<input class="bg-white border border-outline-variant rounded-xl px-4 py-2 w-full focus:ring-2 focus:ring-primary outline-none text-body-md" placeholder="Your email" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-gutter mt-12 pt-8 border-t border-outline-variant/20 flex justify-between items-center text-on-surface-variant text-label-sm">
+<span>© 2024 Kindred Canine Inc. All rights reserved.</span>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary transition-colors" href="#">Facebook</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for scroll effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('backdrop-blur-md', 'bg-surface/90');
+            } else {
+                header.classList.remove('backdrop-blur-md', 'bg-surface/90');
+            }
+        });
+
+        // Simple observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in', 'fade-in', 'slide-in-from-bottom-10', 'duration-700');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body></html>

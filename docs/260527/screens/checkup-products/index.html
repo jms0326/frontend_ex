@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Health Packages | Kindred Canine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#1b1c1c",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e4e2e1",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fbf9f8",
+                    "primary": "#005da7",
+                    "surface-dim": "#dcd9d9",
+                    "primary-fixed-dim": "#a4c9ff",
+                    "secondary-fixed-dim": "#ffb955",
+                    "outline": "#717783",
+                    "outline-variant": "#c1c7d3",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#498300",
+                    "on-surface": "#1b1c1c",
+                    "on-secondary-fixed": "#291800",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-primary-fixed": "#001c39",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f6f3f2",
+                    "tertiary": "#386800",
+                    "secondary-container": "#feae2c",
+                    "tertiary-fixed-dim": "#87dc2c",
+                    "surface-container-high": "#eae8e7",
+                    "surface": "#fbf9f8",
+                    "surface-container": "#f0eded",
+                    "on-primary-container": "#fdfcff",
+                    "secondary-fixed": "#ffddb4",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#414751",
+                    "background": "#fbf9f8",
+                    "surface-variant": "#e4e2e1",
+                    "on-secondary-fixed-variant": "#633f00",
+                    "primary-container": "#2976c7",
+                    "inverse-primary": "#a4c9ff",
+                    "on-primary-fixed-variant": "#004883",
+                    "on-tertiary-container": "#f9ffeb",
+                    "tertiary-fixed": "#a1fa49",
+                    "surface-tint": "#0060ac",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#0e2000",
+                    "on-secondary-container": "#6b4500",
+                    "secondary": "#835500",
+                    "on-tertiary-fixed-variant": "#2a5000",
+                    "inverse-surface": "#303030",
+                    "primary-fixed": "#d4e3ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max-width": "1200px",
+                    "unit": "8px",
+                    "margin-desktop": "auto",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 16px 32px rgba(74, 144, 226, 0.12);
+        }
+        body {
+            background-color: #fbf9f8;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 shadow-[0px_4px_16px_rgba(74,144,226,0.08)] bg-surface dark:bg-surface-dim flex items-center px-margin-mobile md:px-gutter h-16 w-full">
+<div class="flex items-center gap-4 w-full max-w-container-max-width mx-auto">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim cursor-pointer active:scale-95 transition-transform duration-200">menu</span>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim flex-grow">Kindred Canine</h1>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary" href="#">Products</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#">Reservation</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:opacity-80 transition-opacity" href="#">My Page</a>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-gutter max-w-container-max-width mx-auto">
+<!-- Hero Section -->
+<section class="mb-16 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined mr-2" style="font-size: 18px;">verified_user</span>
+                    Trusted Veterinary Expertise
+                </div>
+<h2 class="font-headline-xl text-headline-xl text-on-background">Proactive Health for Your Best Friend</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Choose from our veterinarian-curated check-up packages designed to track your dog's health milestones and ensure a long, happy life together.
+                </p>
+</div>
+<div class="relative hidden md:block h-80 rounded-xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A serene portrait of a golden retriever sitting calmly in a sunlit modern veterinary office. The background is a clean white minimalist clinic with soft blue accents, creating a professional yet warm and empathetic atmosphere. Soft natural light streams from the side, highlighting the dog's healthy coat and gentle expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-duXjK2xrYm3tCYPkocqGk8BVACWjwB50rvzzmLLr0GUh4p0HRi2oeVSIcUMlDLqlRUfZD19N0jORR16GcmYgHKLId4mQKvPv6snBLm3_0sWn2cbHGXwmhNkvv9ICWDl_O5iyPRMz2L0lM7uInb5mqOIPaYlyxtiCg61kkockuWtifSLWK0m4Rr_d7nJLJBCgjWIKMAbsb29wwsjGyjpQCuvt7Cg9w0FKRjE0t9E0_3VbO40wVbIPUplxZNmk3fFfaWqfIp2Gzkw"/>
+</div>
+</section>
+<!-- Product Grid (Asymmetric Bento Style Inspired) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Basic Package -->
+<div class="md:col-span-4 flex flex-col package-card bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-8 transition-all duration-300 shadow-[0px_8px_16px_rgba(74,144,226,0.06)] h-full">
+<div class="mb-6">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary">health_and_safety</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background">Basic Care</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Essential annual foundation</p>
+</div>
+<div class="mb-8">
+<span class="font-headline-lg text-headline-lg text-primary">$149</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-1">/ visit</span>
+</div>
+<ul class="flex-grow space-y-4 mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Physical Exam</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Core Vaccinations</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Parasite Screening</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-surface-variant text-on-surface font-label-md text-label-md rounded-xl hover:bg-outline-variant transition-colors active:scale-95 duration-150">Select Basic</button>
+</div>
+<!-- Comprehensive (Featured) -->
+<div class="md:col-span-4 flex flex-col package-card bg-primary-container text-on-primary-container rounded-xl p-8 transition-all duration-300 shadow-[0px_16px_40px_rgba(0,93,167,0.15)] h-full relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-secondary-container text-on-secondary-container px-4 py-1 rounded-bl-xl font-label-md text-label-md">
+                    Most Popular
+                </div>
+<div class="mb-6">
+<div class="w-12 h-12 bg-on-primary-container/20 rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Comprehensive</h3>
+<p class="font-body-md text-body-md opacity-90 mt-2">The complete diagnostic scan</p>
+</div>
+<div class="mb-8">
+<span class="font-headline-lg text-headline-lg">$299</span>
+<span class="font-label-md text-label-md opacity-80 ml-1">/ visit</span>
+</div>
+<ul class="flex-grow space-y-4 mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md">All Basic Features</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md">Blood Chemistry Panel</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md">Urinalysis Diagnostic</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md">Organ Health Screening</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-on-primary-container text-primary font-label-md text-label-md rounded-xl hover:opacity-90 transition-opacity active:scale-95 duration-150 shadow-lg">Select Comprehensive</button>
+</div>
+<!-- Senior Dog Special -->
+<div class="md:col-span-4 flex flex-col package-card bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-8 transition-all duration-300 shadow-[0px_8px_16px_rgba(74,144,226,0.06)] h-full">
+<div class="mb-6">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary">potted_plant</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background">Senior Special</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Focused on longevity (7+ years)</p>
+</div>
+<div class="mb-8">
+<span class="font-headline-lg text-headline-lg text-primary">$389</span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-1">/ visit</span>
+</div>
+<ul class="flex-grow space-y-4 mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Full Senior Bloodwork</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Joint &amp; Mobility Review</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Thyroid &amp; Heart Screening</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Nutritional Consultation</span>
+</li>
+</ul>
+<button class="w-full py-4 border-2 border-primary text-primary font-label-md text-label-md rounded-xl hover:bg-primary/5 transition-colors active:scale-95 duration-150">Select Senior</button>
+</div>
+</div>
+<!-- Trust Badges Section -->
+<section class="mt-20 py-12 border-t border-outline-variant/30 flex flex-wrap justify-center md:justify-around gap-12 text-on-surface-variant opacity-80">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">verified</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Licensed Vets</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">clinical_notes</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Digital Reports</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">schedule</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Quick Scheduling</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 pb-safe bg-surface dark:bg-surface-container-lowest shadow-[0px_-4px_16px_rgba(74,144,226,0.08)] z-50 md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pets</span>
+<span class="font-label-sm text-label-sm">Products</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm">Reservation</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 transition-transform duration-150 active:scale-95">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">My Page</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                ripple.className = 'absolute bg-white/20 rounded-full animate-ping';
+                ripple.style.width = '20px';
+                ripple.style.height = '20px';
+                ripple.style.left = e.offsetX + 'px';
+                ripple.style.top = e.offsetY + 'px';
+                this.classList.add('relative', 'overflow-hidden');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 500);
+            });
+        });
+    </script>
+</body></html>
