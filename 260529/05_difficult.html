@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. callback hell -> 순서보장을 위해...
+      function f1() {
+        console.log("작업1");
+      }
+      function f2() {
+        console.log("작업2");
+      }
+      function f3() {
+        console.log("작업3");
+      }
+      //   f1();
+      //   f2();
+      //   f3();
+      //   setTimeout(() => {
+      //     f1();
+      //   }, Math.random() * 1000);
+      //   setTimeout(
+      //     () => {
+      //       f2();
+      //     },
+      //     Math.random() * 1000 + 1000,
+      //   );
+      //   setTimeout(
+      //     () => {
+      //       f3();
+      //     },
+      //     Math.random() * 1000 + 2000,
+      //   );
+      setTimeout(() => {
+        let counter = 0;
+        f1();
+        setTimeout(
+          () => {
+            counter++;
+            f2();
+            setTimeout(
+              () => {
+                counter++;
+                f3();
+                console.log(counter);
+              },
+              Math.random() * 1000 + 2000,
+            );
+          },
+          Math.random() * 1000 + 1000,
+        );
+      }, Math.random() * 1000);
+      // 스코프 잘 이해하고, 함수 잘 쓰고, 들여쓰기 감수하면 ...
+      // 2. 예외처리
+      try {
+        setTimeout(() => {
+          console.log("에러 생기는 경우");
+          // task queue
+          throw new Error("에러 발생");
+          f1();
+          console.log("에러로 도달 못함");
+        });
+        // call stack
+        console.log("아무 문제없네요");
+      } catch {
+        console.log("잡았다!");
+      }
+    </script>
+  </body>
+</html>
