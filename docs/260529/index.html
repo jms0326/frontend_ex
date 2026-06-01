@@ -1,74 +1,313 @@
+<!-- Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved. -->
 <!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>메모 앱</title>
-    <!-- favicon, og, css framework setting, ga, hostdog -->
+    <title>Smart Memo Space</title>
+    <!-- Google Fonts 계열의 고급 폰트 로드 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      /* https://noonnu.cc/ */
-      /* https://fonts.google.com/selection/embed */
+      /* 디자인 토큰 및 리셋 */
       * {
         box-sizing: border-box;
-      }
-      body {
-        /* 100vh 설정 시 스크롤 생기는 이슈 해결 */
         margin: 0;
         padding: 0;
       }
-      /* https://flukeout.github.io/ */
-      /* https://developer.mozilla.org/ko/docs/Web/CSS/Guides/Selectors */
-      /* https://www.w3schools.com/cssref/css_selectors.php */
-      #container {
+
+      body {
+        font-family: "Plus Jakarta Sans", "Noto Sans KR", sans-serif;
+        background-color: #03001e;
+        color: #f8fafc;
+        min-height: 100vh;
+        overflow: hidden;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        /* color:  */
-        /* border-color:  */
-        /* https://colorhunt.co/ */
-        /* https://2colors.colorion.co/ */
-        /* background-color: greenyellow; */
-        /* background-color: #ffdfb9; */
-        /* https://unsplash.com/ko */
-        /* https://pixabay.com/ko/ */
-        background-image: url("./bg.jpg");
-        background-size: cover;
-        background-position: center;
-        /* TODO : 텍스트랑 버튼이 잘 안보임 -> 대처 */
-        /* opacity -> 투명도. */
+        position: relative;
+      }
+
+      /* 움직이는 오로라 백그라운드 디자인 */
+      .aurora-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        filter: blur(100px);
+        opacity: 0.8;
+        overflow: hidden;
+      }
+
+      .aurora-blob {
+        position: absolute;
+        border-radius: 50%;
+        mix-blend-mode: screen;
+        animation: rotate-blob infinite alternate ease-in-out;
+      }
+
+      .aurora-blob-1 {
+        top: -10%;
+        left: -10%;
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(
+          circle,
+          rgba(115, 67, 211, 0.6) 0%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        animation-duration: 25s;
+      }
+
+      .aurora-blob-2 {
+        bottom: -10%;
+        right: -10%;
+        width: 70%;
+        height: 70%;
+        background: radial-gradient(
+          circle,
+          rgba(34, 211, 238, 0.5) 0%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        animation-duration: 30s;
+        animation-delay: -5s;
+      }
+
+      .aurora-blob-3 {
+        top: 30%;
+        left: 30%;
+        width: 50%;
+        height: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(236, 72, 153, 0.45) 0%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        animation-duration: 20s;
+        animation-delay: -10s;
+      }
+
+      @keyframes rotate-blob {
+        0% {
+          transform: translate(0px, 0px) rotate(0deg) scale(1);
+        }
+        50% {
+          transform: translate(80px, 50px) rotate(180deg) scale(1.2);
+        }
+        100% {
+          transform: translate(-40px, -80px) rotate(360deg) scale(0.9);
+        }
+      }
+
+      /* Glassmorphism 메인 카드 디자인 */
+      #container {
+        position: relative;
+        z-index: 10;
+        width: 90%;
+        max-width: 480px;
+        padding: 48px 40px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 32px;
+        box-shadow:
+          0 25px 50px -12px rgba(0, 0, 0, 0.5),
+          inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* 타이틀 디자인 (그라데이션 및 글로우) */
+      .brand-title {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: -1.5px;
+        line-height: 1.1;
+        margin-bottom: 16px;
+        background: linear-gradient(
+          135deg,
+          #ffffff 30%,
+          #a5b4fc 70%,
+          #6366f1 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.3));
+      }
+
+      .brand-subtitle {
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 300;
+        color: #94a3b8;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        word-break: keep-all;
+      }
+
+      /* 프리미엄 CTA 버튼 디자인 */
+      .cta-button {
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #ffffff;
+        background: linear-gradient(
+          135deg,
+          #6366f1 0%,
+          #4f46e5 50%,
+          #2563eb 100%
+        );
+        border: none;
+        outline: none;
+        padding: 16px 36px;
+        border-radius: 18px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow:
+          0 8px 24px rgba(99, 102, 241, 0.4),
+          0 2px 4px rgba(99, 102, 241, 0.2);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* 버튼 내부의 미세한 샤인 반사 효과 */
+      .cta-button::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.6s;
+      }
+
+      .cta-button:hover::after {
+        left: 100%;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow:
+          0 16px 32px rgba(99, 102, 241, 0.5),
+          0 4px 12px rgba(99, 102, 241, 0.3);
+        background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+      }
+
+      .cta-button:active {
+        transform: translateY(-1px) scale(0.98);
+        box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+      }
+
+      .cta-button svg {
+        transition: transform 0.3s ease;
+      }
+
+      .cta-button:hover svg {
+        transform: translateX(4px);
+      }
+
+      /* 장식 데코용 요소 */
+      .card-decorator {
+        position: absolute;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.2);
+        letter-spacing: 2px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     </style>
   </head>
   <body>
-    <div id="container">
-      <h1>메모 하러 가기</h1>
-      <!-- #container > button, #container button -->
-      <button>이동</button>
-      <!-- #container button -->
-      <!-- <div><button>자손 버튼</button></div> -->
+    <!-- 오로라 흘러가는 레이어 -->
+    <div class="aurora-bg">
+      <div class="aurora-blob aurora-blob-1"></div>
+      <div class="aurora-blob aurora-blob-2"></div>
+      <div class="aurora-blob aurora-blob-3"></div>
     </div>
+
+    <!-- 인트로 카드 -->
+    <div id="container">
+      <h1 class="brand-title">Smart Memo<br />Space</h1>
+      <p class="brand-subtitle">
+        흩어지는 생각과 소중한 영감을 한곳에 기록하세요.<br />
+        더 편리하고 다채로운 감성 메모 라이프가 시작됩니다.
+      </p>
+
+      <button class="cta-button" id="start-btn">
+        메모 작성하러 가기
+        <!-- 화살표 SVG 아이콘 -->
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5 12H19"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 5L19 12L12 19"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <span class="card-decorator">DINKI'S WORKSPACE</span>
+    </div>
+
     <script>
-      // DOM 로딩이 다 끝난 다음이므로 굳이 DOMContentLoaded X
       document.addEventListener("DOMContentLoaded", main);
 
-      // #을 자꾸 빼먹으므로 # 주의
-      const container = document.querySelector("#container");
-      const button = document.querySelector("#container > button"); // '>' 하위 선택자 (바로 밑)
-      // const button = document.querySelector("#container button"); // 바로 아래가 아니어도 되는 '자손' 선택자
-      // 호이스팅 되므로 함수 선언문을 뒤에다가 잘 써주시면 된다
       function main() {
-        console.log("DOM 로딩 완료");
-        // 이벤트 타입 누락하거나 혼동하지말 것 (click <-> submit, input <-> change)
-        button.addEventListener("click", () => {
-          // event 생략해도 된다
-          // 1. event.preventDefault -> form
-          // 2. event.target
-          // a href
-          location.href = "memo.html";
-          // 새 창 띄우기는요?
-          // window.open("memo.html")
+        console.log("Smart Memo Space DOM loaded successfully");
+        const startBtn = document.querySelector("#start-btn");
+
+        startBtn.addEventListener("click", () => {
+          // 자연스러운 아웃 애니메이션 처리 후 페이지 이동 (선택적 전환 효과 부여)
+          const container = document.querySelector("#container");
+          container.style.transition = "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
+          container.style.opacity = "0";
+          container.style.transform = "translateY(-30px)";
+
+          setTimeout(() => {
+            location.href = "memo.html";
+          }, 400);
         });
       }
     </script>
