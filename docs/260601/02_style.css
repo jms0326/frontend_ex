@@ -1,0 +1,431 @@
+/* Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+  background-color: #0b0f19;
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 아름다운 배경 무드등 애니메이션 */
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.5;
+  animation: float 20s infinite alternate ease-in-out;
+}
+
+.bg-shape-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.8), transparent);
+  top: -15%;
+  left: 5%;
+}
+
+.bg-shape-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.8), transparent);
+  bottom: -25%;
+  right: -5%;
+  animation-delay: -3s;
+}
+
+.bg-shape-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.7), transparent);
+  top: 40%;
+  left: -10%;
+  animation-duration: 25s;
+  animation-delay: -7s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  100% { transform: translate(80px, 80px) scale(1.2) rotate(45deg); }
+}
+
+/* 도감 메인 컨테이너 */
+.pokedex-wrapper {
+  width: 90%;
+  max-width: 460px;
+  background: rgba(10, 15, 30, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 32px;
+  padding: 36px 28px;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7), 
+              0 0 20px rgba(244, 63, 94, 0.3) inset,
+              0 0 30px rgba(59, 130, 246, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 헤더 타이틀 */
+.pokedex-header {
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.logo svg {
+  color: #f43f5e;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 검색 폼 바 */
+.search-form {
+  display: flex;
+  gap: 12px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: #64748b;
+}
+
+#searchInput {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 14px 16px 14px 44px;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: #f43f5e;
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.2);
+}
+
+.search-btn {
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+  border: none;
+  color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4);
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(225, 29, 72, 0.6);
+}
+
+.search-btn:active {
+  transform: translateY(0);
+}
+
+/* 인기 포켓몬 버튼 태그 */
+.popular-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.popular-tag {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.popular-tag:hover {
+  background: rgba(244, 63, 94, 0.2);
+  color: #fff;
+  border-color: rgba(244, 63, 94, 0.5);
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+  transform: translateY(-2px);
+}
+
+/* 결과 컨테이너 영역 */
+.result-container {
+  min-height: 380px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 초기 상태 & 로딩 & 에러 공통 래퍼 */
+.empty-state, .loading-state, .error-state {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  color: #64748b;
+  font-size: 0.95rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 24px;
+}
+
+.error-state {
+  color: #f87171;
+}
+
+/* 포켓볼 스피너 (로딩 애니메이션용) */
+.poke-ball-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #f43f5e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 포켓몬 카드 완성체 뷰 */
+.pokemon-card {
+  padding: 24px;
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent);
+  border-radius: 20px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pokemon-card:hover {
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), 
+              0 0 20px var(--type-color, rgba(255,255,255,0.2));
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 카드 상단: 이미지와 이름 */
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.poke-id {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.poke-image-container {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+/* 타입별 색상이 들어올 공간 */
+.poke-image-container::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--type-color, rgba(255,255,255,0.05));
+  filter: blur(25px);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.poke-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+  animation: hoverFloat 3s ease-in-out infinite;
+}
+
+@keyframes hoverFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.poke-name-ko {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.poke-name-en {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  text-transform: capitalize;
+}
+
+/* 스탯(Stats) 바 영역 */
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-label {
+  width: 45px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.stat-bar-bg {
+  flex: 1;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  width: 0%; /* JS에서 width 부여 */
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 스탯 수치 표시 */
+.stat-value {
+  width: 30px;
+  text-align: right;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* 스탯 컬러 정의 */
+.stat-hp .stat-bar-fill { background: linear-gradient(90deg, #ef4444, #f87171); }
+.stat-atk .stat-bar-fill { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.stat-def .stat-bar-fill { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.stat-spd .stat-bar-fill { background: linear-gradient(90deg, #10b981, #34d399); }
+
+/* 오디오 플레이어 커스텀 (숨기고 커스텀 버튼으로 제어) */
+.audio-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.cry-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  padding: 10px 20px;
+  border-radius: 99px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.cry-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}

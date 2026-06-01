@@ -1,0 +1,99 @@
+<!-- Created by DINKIssTyle on 2026. Copyright (C) 2026 DINKI'ssTyle. All rights reserved. -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포켓몬 도감</title>
+    <!-- 고급 구글 폰트 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Noto+Sans+KR:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 스타일시트 로드 -->
+    <link rel="stylesheet" href="./02_style.css" />
+  </head>
+  <body>
+    <!-- 배경 장식용 애니메이션 그라데이션 원형들 -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <main class="pokedex-wrapper">
+      <!-- 도감 상단 헤더부 -->
+      <header class="pokedex-header">
+        <h1 class="logo">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M22 12h-6" />
+            <path d="M8 12H2" />
+            <circle cx="12" cy="12" r="2" />
+          </svg>
+          포켓몬 도감
+        </h1>
+        <p class="subtitle">도감번호 또는 영어 이름을 검색하세요.</p>
+      </header>
+
+      <!-- 도감 검색부 -->
+      <form id="searchForm" class="search-form">
+        <div class="search-input-wrapper">
+          <svg
+            class="search-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <input
+            type="text"
+            name="search"
+            id="searchInput"
+            placeholder="예 : 피카츄 ..."
+            required
+            autocomplete="off"
+          />
+        </div>
+        <button type="submit" class="search-btn">조회</button>
+      </form>
+
+      <!-- 인기 포켓몬 추천 태그 -->
+      <div class="popular-tags">
+        <span class="popular-tag" data-name="피카츄">#피카츄</span>
+        <span class="popular-tag" data-name="리자몽">#리자몽</span>
+        <span class="popular-tag" data-name="잠만보">#잠만보</span>
+        <span class="popular-tag" data-name="이브이">#이브이</span>
+        <span class="popular-tag" data-name="뮤츠">#뮤츠</span>
+      </div>
+
+      <!-- 검색 결과 카드 출력부 -->
+      <section id="searchResult" class="result-container">
+        <!-- 초기 상태 화면 -->
+        <div class="empty-state">
+          <div class="poke-ball-placeholder"></div>
+          <p>아직 발견된 포켓몬이 없습니다.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- 스크립트 로드 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./02_script.js"></script>
+  </body>
+</html>
