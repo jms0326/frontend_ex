@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일 업로드</title>
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <form id="uploadForm">
+      <h1>업로드</h1>
+      <input type="file" name="file" accept="image/*" />
+      <button>업로드</button>
+    </form>
+    <section id="imageContainer"></section>
+    <script>
+      // 어차피 같은 source를 공유하면 localStorage를 쓸 수 있잖아요
+      // 과감하게 로그인 로직 생략
+      // 로그인 필요하면 01이나 02에서 하고 오세요...
+      const SUPABASE_URL = "https://mtwzpfdpcetwpfnuxysd.supabase.co";
+      const SUPABASE_PUB_KEY = "sb_publishable_kA8o2fXkFsBPxKDMiXNVWQ_wtui-BgN";
+      const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUB_KEY);
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        const imageList = await sb.storage.from("image").list();
+        console.log(imageList);
+        const imageContainer = document.querySelector("#imageContainer");
+        for (const image of imageList.data) {
+          const response = await sb.storage
+            .from("image")
+            .getPublicUrl(image.name);
+          const publicUrl = response.data.publicUrl;
+          console.log(publicUrl);
+          const imageItem = document.createElement("img");
+          imageItem.src = publicUrl;
+          imageItem.width = 320;
+          imageContainer.append(imageItem);
+        }
+      });
+
+      const uploadForm = document.querySelector("#uploadForm");
+      uploadForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        console.log(event.target.file);
+        console.log(event.target.file.files[0]);
+        const file = event.target.file.files[0];
+        const newFileName = `${crypto.randomUUID()}-${file.name}`;
+        console.log(newFileName);
+
+        const bucketName = "image";
+        const result = await sb.storage
+          .from(bucketName)
+          .upload(newFileName, file);
+        console.log(result);
+        if (result?.error) {
+          console.log("에러발생", result.error);
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>
